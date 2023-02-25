@@ -4,6 +4,7 @@ query = {"stationid":'KPB',"timefrom":'05:00',"timeto":'08:00'}
 response = requests.get(url,query)
 
 data=response.json()['data']
+print('Waktu Keberangkatan   Waktu Sampai   Tujuan')
 for i in data:
     if i['dest'] == 'BEKASI':
-        print(i['time_est'],"-",i['dest_time'],"-",i['route_name'])
+        print(i['time_est'],"              ",i['dest_time'],"   ",i['route_name'])
